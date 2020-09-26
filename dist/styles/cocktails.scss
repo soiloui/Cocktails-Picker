@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+$col-one: #fcb69f;
+$col-two: #ffecd2;
+$col-three: #5f443c;
+$gradient: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	position: relative;
+	font-size: 20px;
+	font-family: 'Nunito', sans-serif;
+	color: $col-three;
+}
+body {
+	min-height: 100vh;
+	padding: 1em;
+	padding-bottom: 3em;
+	background-image: $gradient;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 0.6em;
+
+	font-size: 0.7rem;
+	text-align: center;
+	color: $col-three;
+	background: $col-two;
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+}
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	word-break: break-word;
+}
+
+/* --------------------- BACK ARROW --------------------- */
+.arrow-back {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 2em;
+	width: 50px;
+	height: 50px;
+
+	background: $col-two;
+	border: 3px solid $col-three;
+	border-radius: 50%;
+	box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.5);
+
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	z-index: 999;
+
+	&:hover {
+		transform: scale(1.05);
+		background: $col-one;
+	}
+	&:active {
+		transform: scale(0.8);
+		background: $col-three;
+	}
+}
+.arrow-back__top,
+.arrow-back__bot {
+	position: absolute;
+	left: 23%;
+	height: 4px;
+	width: 50%;
+	background: $col-three;
+	transform: translateY(-50%);
+	border-radius: 5px;
+	transform-origin: left;
+}
+.arrow-back__top {
+	top: 48%;
+	transform: rotate(35deg);
+}
+.arrow-back__bot {
+	top: 52%;
+	transform: rotate(-35deg);
+}
+
+/* --------------------- SEARCH --------------------- */
+.search-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-bottom: 1em;
+}
+
+.search-box > div > :nth-child(n) {
+	padding: 0.5em;
+
+	font-family: inherit;
+	font-size: 0.7rem;
+	color: #fff;
+	border: 0;
+}
+.search-box > div {
+	border-radius: 13px;
+	padding: 0.2em 0.4em;
+	background: $col-one;
+	box-shadow: inset 1px 1px 2px $col-three;
+}
+.search-box > div > button {
+	text-align: center;
+}
+.search-box > div > :nth-child(n) {
+	background: transparent;
+}
+
+/* --------------------- CATEGORIES SECTION --------------------- */
+.categories-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.categories-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.category {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 0.7em;
+	padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	overflow: hidden;
+	text-transform: capitalize;
+	border-radius: 13px;
+	box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.5);
+	user-select: none;
+
+	transition: transform 0.35s ease-out, box-shadow 0.2s ease-out;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(0.95);
+		box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+}
+.category__name {
+	z-index: 1;
+	position: relative;
+	padding: 0.2em;
+
+	font-size: 2rem;
+	text-align: center;
+	text-shadow: 1px 1px #000;
+	color: #fff;
+	background: rgba($col-one, 0.9);
+	border-radius: 5px;
+}
+.category__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* --------------------- FOUNDED ITEMS --------------------- */
+.founded-items {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.founded-items__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 150px;
+	margin: 0.4em;
+
+	text-align: center;
+	color: #fff;
+	background: $col-one;
+	border-radius: 5px;
+	box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.5);
+
+	transition: transform 0.35s ease-out, box-shadow 0.2s ease-out;
+	overflow: hidden;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(0.95);
+		box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	& > p {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 0.25em;
+	}
+}
+
+/* --------------------- CHOOSED ITEM --------------------- */
+.item {
+	display: flex;
+	flex-direction: column;
+	width: 70vw;
+	max-width: 700px;
+}
+.item__thumb {
+	border-radius: 10px;
+	box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+.item__name {
+	padding: 0.6em 0;
+}
+
+.item__ingredients,
+.item__instructions {
+	margin-bottom: 1em;
+	padding: 1em;
+
+	box-shadow: inset 2px 2px 6px $col-three;
+	border-radius: 10px;
+}
+
+/* --------------------- FOOTER --------------------- */
