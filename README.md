@@ -18,4 +18,4 @@ Choose from the proposed categories or search for an already selected cocktail
 
 ## Live Project
 
-- [Online]()
+- [Online](https://soiloui.github.io/Cocktails-Picker/index.html)
